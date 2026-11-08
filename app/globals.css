@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/*
+  asyOS — Ubuntu / GNOME (Yaru dark) design tokens.
+  Values follow the Yaru palette and libadwaita's dark surfaces.
+*/
+@theme {
+  /* brand */
+  --color-ub-orange: #e95420;
+  --color-ub-orange-light: #f0723f;
+  --color-ub-orange-dark: #c7431a;
+  --color-ub-aubergine: #2c001e;
+  --color-ub-purple: #77216f;
+
+  /* surfaces */
+  --color-win: #242424;
+  --color-head: #303030;
+  --color-side: #2b2b2b;
+  --color-sunken: #1e1e1e;
+  --color-line: #141414;
+  --color-term: #300a24;
+
+  /* ink */
+  --color-ink: #ffffff;
+  --color-ink-2: #deddda;
+  --color-ink-3: #b5b2af;
+  --color-ink-4: #8b8886;
+
+  /* semantic */
+  --color-ok: #26a269;
+  --color-ok-light: #57cf94;
+  --color-info: #78aeed;
+  --color-warn: #e0b070;
+  --color-err: #ff7b6b;
+
+  /* terminal ansi */
+  --color-ansi-green: #8ae234;
+  --color-ansi-blue: #729fcf;
+  --color-ansi-grey: #d3d7cf;
+
+  --radius-win: 12px;
+}
+
+@theme inline {
+  --font-sans: var(--font-ubuntu-sans);
+  --font-mono: var(--font-ubuntu-mono);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ub-aubergine);
+  color: var(--color-ink-2);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-info);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a5cbf5;
+}
+
+/* GNOME-ish thin scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* the desktop wallpaper */
+.wallpaper {
+  background-image:
+    radial-gradient(1100px 700px at 78% 18%, rgba(233, 84, 32, 0.3) 0%, rgba(233, 84, 32, 0) 62%),
+    radial-gradient(900px 620px at 18% 88%, rgba(119, 33, 111, 0.55) 0%, rgba(119, 33, 111, 0) 70%),
+    linear-gradient(155deg, #3a0329 0%, #2c001e 42%, #1c0113 100%);
+}
+
+.wallpaper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    112deg,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    rgba(255, 255, 255, 0) 1px,
+    rgba(255, 255, 255, 0) 46px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
