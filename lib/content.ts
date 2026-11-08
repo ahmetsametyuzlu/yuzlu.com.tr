@@ -355,7 +355,7 @@ export const projects: Project[] = [
 export const education: { degree: L10n; place: L10n; year: L10n }[] = [
   {
     degree: { tr: "Doktora · İşletme", en: "PhD · Business Administration" },
-    place: { tr: "Ankara Üniversitesi (SBF)", en: "Ankara University (Political Science)" },
+    place: { tr: "Ankara Üniversitesi", en: "Ankara University" },
     year: { tr: "2026 – devam ediyor", en: "2026 – in progress" },
   },
   {
